@@ -35,15 +35,8 @@ def task4(array):
             return c
     return -1
 
-def task5(array):
-    c = array.count("1")
-    if len(array) > c:
-        if array[c+1] == "0":
-            return c
-    return -1
-
 if __name__ == "__main__":
     given = "111111111110000000000000000"
-    for i in range(6):
+    for i in range(5):
         function = globals()['task' + str(i)](given)
         print(f"{i+1}: {function}")
