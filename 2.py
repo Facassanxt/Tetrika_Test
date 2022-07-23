@@ -54,3 +54,4 @@ def letter_count():
 if __name__ == "__main__":
     collection_animals("https://inlnk.ru/jElywR")
     letter_count()
+    
