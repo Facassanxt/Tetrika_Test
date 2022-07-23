@@ -24,7 +24,7 @@ def test_letter(animal):
     return ord(letter) >= ord("а") and ord(letter) <= ord("я")
 
 def collection_animals(url):
-    animals_file = open("animals_file.txt", "w+")
+    animals_file = open("animals_file.txt", "w+", encoding="utf-8")
     while True:
         html = get_html(url)
         soup = BeautifulSoup(html, "lxml")
@@ -39,7 +39,7 @@ def collection_animals(url):
         url = "https://ru.wikipedia.org" + find_block.find_all(href=re.compile("pagefrom"))[0].get("href")
 
 def letter_count():
-    with open("animals_file.txt", "r") as animals_file:
+    with open("animals_file.txt", "r",encoding="utf-8") as animals_file:
         animals = animals_file.readlines()
     animals_dict = {}
     for animal in animals:
@@ -48,10 +48,10 @@ def letter_count():
             animals_dict[letter] += 1
         else:
             animals_dict[letter] = 1
+    animals_dict = sorted(animals_dict.items())
     for letter in animals_dict:
-        print(f"{letter}: {animals_dict[letter]}")
+        print(f"{letter[0]}: {letter[1]}")
 
 if __name__ == "__main__":
     collection_animals("https://inlnk.ru/jElywR")
     letter_count()
-    
