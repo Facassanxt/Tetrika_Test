@@ -14,6 +14,8 @@
 import requests
 import re
 from bs4 import BeautifulSoup
+from datetime import datetime
+import time
 
 def get_html(url):
     r = requests.get(url)
@@ -53,5 +55,7 @@ def letter_count():
         print(f"{letter[0]}: {letter[1]}")
 
 if __name__ == "__main__":
+    start_time = datetime.now()
     collection_animals("https://inlnk.ru/jElywR")
     letter_count()
+    print(datetime.now() - start_time) # 35.0 seconds
