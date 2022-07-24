@@ -6,6 +6,7 @@ ____
 ## Задание 2
 - 2.py    35 секунд
 - 2 async 15 секунд
+
 ![Задание 2](https://github.com/Facassanxt/Tetrika_Test/blob/main/screenshots/2.png)
 ____
 ## Задание 3
